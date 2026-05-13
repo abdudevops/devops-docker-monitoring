@@ -39,6 +39,7 @@ Monitoring:
 ```bash
 docker compose up -d --build
 
+---
 
 ## Then open:
 
@@ -47,6 +48,9 @@ App: http://localhost:8080
 Grafana: http://localhost:3001
 
 Prometheus: http://localhost:9090
+
+
+---
 
 
 📊 Monitoring
@@ -65,6 +69,12 @@ Dashboard ID used:
 1860 (Node Exporte)
 
 
+
+---
+
+
+
+
 🔥 Features
 Full containerized app
 
@@ -77,6 +87,7 @@ Docker containers metrics
 Clean architecture
 
 
+---
 
 
 👨‍💻 Author

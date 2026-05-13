@@ -34,7 +34,7 @@ Monitoring:
 
 ---
 
-## 🐳 Run the Project
+## Run the Project
 
 ```bash
 docker compose up -d --build

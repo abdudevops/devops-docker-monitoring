@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevOps Dashboard 🚀</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      width: 400px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      animation: fadeIn 1s ease;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 2.5em;
+    }
+
+    p {
+      opacity: 0.8;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #ff416c;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #00ffcc;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="card">
+    <h1>🚀 DevOps App</h1>
+    <p>Frontend + Backend + Docker + Nginx</p>
+
+    <button onclick="callAPI()">Call Backend</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function callAPI() {
+      fetch('/api')
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('result').innerText = data;
+        })
+        .catch(() => {
+          document.getElementById('result').innerText = "Error connecting to backend";
+        });
+    }
+  </script>
+
+</body>
+</html>

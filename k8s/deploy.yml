@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: mydevdeploy
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: devapp
+
+  template:
+    metadata:
+      labels:
+        app: devapp
+
+    spec:
+      containers:
+        - name: frontend
+          image: abdullahahmed1101076/devops:0.1
+
+          ports:
+            - containerPort: 80
+
+        - name: backend
+          image: abdullahahmed1101076/devops2:0.1
+
+          ports:
+            - containerPort: 80
+
+          env:
+            - name: DB_HOST
+              value: mysql-service
+
+            - name: DB_PORT
+              value: "3306"
+
+            - name: DB_USER
+              value: root
+
+            - name: DB_PASSWORD
+              value: root123
